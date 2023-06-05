@@ -187,8 +187,8 @@ def get_all_consensus_indel_positions_parallel(pile, threshould=8):
 def filter_secondary(bam, out, mpile): # filter out secondary alignments whose mapq is less than 10
     with pysam.AlignmentFile(bam, 'rb') as f, pysam.AlignmentFile(out, 'wb', template=f) as o:
         for aln in f:
-            #if aln.is_supplementary and aln.mapping_quality <= mapq:
-            if aln.is_supplementary: 
+            if aln.is_supplementary and aln.mapping_quality <= mapq:
+            #if aln.is_supplementary: 
                 continue
             elif aln.is_secondary and mpile: #reflag to primary
                 aln.is_secondary = False
