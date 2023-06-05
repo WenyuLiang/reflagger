@@ -1,4 +1,4 @@
-# Four modes for this scpit:
+# Four modes for this script:
 - alignment: get alignment stats 
 - pileup
 - filtering: filter secondary alignments by mapQ. useful in homozyous region
